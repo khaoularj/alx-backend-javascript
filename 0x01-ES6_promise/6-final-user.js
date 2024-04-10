@@ -7,5 +7,8 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     uploadPhoto(fileName).then((error) => ({ status: 'rejected', value: error })),
   ];
 
-  return Promise.all(promises);
+  return Promise.all(promises).catch((error) => {
+    console.error('Error occurred during profile signup:', error);
+    throw error;
+  });
 }
