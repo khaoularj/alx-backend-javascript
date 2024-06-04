@@ -12,11 +12,11 @@ function countStudents(path) {
     const header = lines[0].split(',');
 
     // Find the indices of 'firstname' and 'field'
-    const idxFn = header.findIndex((ele) => ele === 'firstname');
-    const idxFd = header.findIndex((ele) => ele === 'field');
+    const indexFN = header.findIndex((ele) => ele === 'firstname');
+    const indexFD = header.findIndex((ele) => ele === 'field');
 
     // Validate that indices are found
-    if (idxFn === -1 || idxFd === -1) {
+    if (indexFN === -1 || indexFD === -1) {
       throw new Error('Invalid CSV format');
     }
 
@@ -34,8 +34,8 @@ function countStudents(path) {
       }
 
       // Increment the field count and add the student name to the list
-      const field = list[idxFd];
-      const firstName = list[idxFn];
+      const field = list[indexFD];
+      const firstName = list[indexFN];
 
       if (!fields[field]) fields[field] = 0;
       fields[field] += 1;
