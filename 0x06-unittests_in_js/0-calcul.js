@@ -1,8 +1,7 @@
-const calculateNumber = (a, b) => {
-  const aRound = Math.round(a);
-  const bRound = Math.round(b);
+// function calculateNumber that should round a and b and return the sum of it
 
-  return aRound + bRound;
-};
+function calculateNumber(a, b) {
+  return Math.round(a) + Math.round(b);
+}
 
 module.exports = calculateNumber;
